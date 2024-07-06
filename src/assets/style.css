@@ -262,6 +262,267 @@ body {
   color: #4f59a9;
 }
 
+.auth__login {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.auth__login .auth__login-container {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+.auth__login .auth__login-container .auth__login-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.auth__login .auth__login-container .auth__login-header h1 {
+  color: #232323;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%;
+  letter-spacing: -1.6px;
+}
+.auth__login .auth__login-container .auth__login-header p {
+  color: #969696;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+.auth__login .auth__login-container form {
+  display: flex;
+  flex-direction: column;
+}
+.auth__login .auth__login-container form .MuiFormControl-root {
+  margin-top: 32px;
+}
+.auth__login .auth__login-container form .MuiFormControl-root .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root {
+  color: #6875d1;
+}
+.auth__login .auth__login-container form .MuiFormControl-root .Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #6875d1;
+}
+.auth__login .auth__login-container form .auth__login-password {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.auth__login .auth__login-container form .auth__login-password .password-show {
+  cursor: pointer;
+  top: 75%;
+  transform: translateY(-75%);
+  right: 20px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  align-items: center;
+}
+.auth__login .auth__login-container form .auth__login-remember {
+  margin: 32px 0 20px;
+}
+.auth__login .auth__login-container form .auth__login-remember label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #232323;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+}
+.auth__login .auth__login-container form .auth__login-remember label input {
+  width: 18px;
+  height: 18px;
+}
+.auth__login .auth__login-container form a {
+  box-sizing: border-box;
+  width: 100%;
+}
+.auth__login .auth__login-container > p {
+  margin-top: 20px;
+  text-align: center;
+  position: relative;
+  color: #6e6e6e;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+}
+.auth__login .auth__login-container > p::after, .auth__login .auth__login-container > p::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #d9d9d9;
+  width: 45%;
+  height: 2px;
+}
+.auth__login .auth__login-container > p::after {
+  right: 0;
+}
+.auth__login .auth__login-container > p::before {
+  left: 0;
+}
+.auth__login .auth__login-container > a {
+  margin-top: 20px;
+  width: 100%;
+  border: 1px solid #e6e8e7;
+}
+.auth__login .auth__login-container .auth__login-account {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.auth__login .auth__login-container .auth__login-account p {
+  color: #6c6c6c;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+.auth__login .auth__login-container .auth__login-account a {
+  color: #367aff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  text-decoration-line: underline;
+}
+
+.auth__register {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.auth__register .auth__register-container {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+.auth__register .auth__register-container .auth__register-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.auth__register .auth__register-container .auth__register-header h1 {
+  color: #232323;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%;
+  letter-spacing: -1.6px;
+}
+.auth__register .auth__register-container .auth__register-header p {
+  color: #969696;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+.auth__register .auth__register-container form {
+  display: flex;
+  flex-direction: column;
+}
+.auth__register .auth__register-container form .MuiFormControl-root {
+  margin-top: 32px;
+}
+.auth__register .auth__register-container form .MuiFormControl-root .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root {
+  color: #6875d1;
+}
+.auth__register .auth__register-container form .MuiFormControl-root input {
+  width: 100%;
+  padding: 16px;
+}
+.auth__register .auth__register-container form .MuiFormControl-root .Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #6875d1;
+}
+.auth__register .auth__register-container form .auth__register-password {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.auth__register .auth__register-container form .auth__register-password .password-show {
+  cursor: pointer;
+  top: 75%;
+  transform: translateY(-75%);
+  right: 20px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  align-items: center;
+}
+.auth__register .auth__register-container form a {
+  width: 100%;
+  margin-top: 20px;
+  font-size: 18px;
+}
+.auth__register .auth__register-container > p {
+  margin-top: 20px;
+  text-align: center;
+  position: relative;
+  color: #6e6e6e;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+}
+.auth__register .auth__register-container > p::after, .auth__register .auth__register-container > p::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #d9d9d9;
+  width: 45%;
+  height: 2px;
+}
+.auth__register .auth__register-container > p::after {
+  right: 0;
+}
+.auth__register .auth__register-container > p::before {
+  left: 0;
+}
+.auth__register .auth__register-container > a {
+  margin-top: 20px;
+  width: 100%;
+  font-size: 18px;
+  border: 1px solid #e6e8e7;
+}
+.auth__register .auth__register-container .auth__register-account {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.auth__register .auth__register-container .auth__register-account p {
+  color: #6c6c6c;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+.auth__register .auth__register-container .auth__register-account a {
+  color: #367aff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  text-decoration-line: underline;
+}
+
 footer {
   padding: 40px 0;
   display: flex;
@@ -559,4 +820,46 @@ header .header__container .header__auth a:first-child:hover {
 #testimonials .testimonials__container .testimonials__bottom {
   display: flex;
   gap: 24px;
+}
+
+#login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#login .login__container {
+  width: 95%;
+  height: 95vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+}
+#login .login__container img {
+  width: 100%;
+  height: 95vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 24px;
+}
+
+#register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#register .register__container {
+  width: 95%;
+  height: 95vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+}
+#register .register__container img {
+  width: 100%;
+  height: 95vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 24px;
 }

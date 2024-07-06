@@ -2,19 +2,21 @@ import React, { useState } from "react";
 import { DefaultBtn, DefaultInput } from "../../../assets/components.styles";
 import { TextField } from "@mui/material";
 
-function LoginForm() {
+function RegisterForm() {
   const [hidePass, setHidePass] = useState(false);
 
   return (
-    <div className="auth__login">
-      <div className="auth__login-container">
-        <div className="auth__login-header">
-          <h1>Log in</h1>
-          <p>Please login to continue to your account.</p>
+    <div className="auth__register">
+      <div className="auth__register-container">
+        <div className="auth__register-header">
+          <h1>Sign up</h1>
+          <p>Sign up to enjoy the feature of Revolutie</p>
         </div>
         <form>
+          <TextField label="Your Name" variant="outlined" type="text" />
+          <TextField label="" variant="outlined" type="date" />
           <TextField label="Email" variant="outlined" type="email" />
-          <div className="auth__login-password">
+          <div className="auth__register-password">
             <TextField
               label="Password"
               variant="outlined"
@@ -66,17 +68,11 @@ function LoginForm() {
               )}
             </span>
           </div>
-          <div className="auth__login-remember">
-            <label htmlFor="login-checkbox">
-              <input id="login-checkbox" type="checkbox" />
-              Keep me logged in
-            </label>
-          </div>
-          <DefaultBtn color="#ffe81d">Sign in</DefaultBtn>
+          <DefaultBtn color="#FFE81D">Sign up</DefaultBtn>
         </form>
         <p>or</p>
         <DefaultBtn>
-          Sign in with Google
+          Continue with Google
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
@@ -110,13 +106,13 @@ function LoginForm() {
             />
           </svg>
         </DefaultBtn>
-        <div className="auth__login-account">
-          <p>Need an account?</p>
-          <a href="/register">Create one</a>
+        <div className="auth__register-account">
+          <p>Already have an account??</p>
+          <a href="/login">Sign in</a>
         </div>
       </div>
     </div>
   );
 }
 
-export default LoginForm;
+export default RegisterForm;

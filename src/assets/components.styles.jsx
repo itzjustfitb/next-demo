@@ -1,10 +1,14 @@
 import styled from "styled-components";
 
 export const DefaultBtn = styled.a(({ color }) => ({
+  textDecoration: "none",
+  color: "black",
   cursor: "pointer",
   backgroundColor: color,
-  padding: "12px 28px",
+  padding: "12px 28px ",
   width: "fit-content",
+  fontWeight: 600,
+  boxSizing: "border-box",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -20,7 +24,6 @@ export const DefaultBtn = styled.a(({ color }) => ({
 
 export const DefaultInput = styled.input({
   display: "flex",
-  width: "399px",
   padding: "16px",
   alignIitems: "center",
   gap: "2px",
@@ -29,7 +32,7 @@ export const DefaultInput = styled.input({
   fontFamily: "SF Pro",
   fontSize: 18,
   "&:focus": {
-    outlineColor: "#367aff",
+    outlineColor: "#6875D1",
     borderColor: "transparent",
   },
 });

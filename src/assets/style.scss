@@ -8,6 +8,8 @@
 // TODO --------- COMPONENTS ---------
 @import "./sass/components/serviceCard";
 @import "./sass/components/testimonialCard";
+@import "./sass/components/authLogin";
+@import "./sass/components/authRegister";
 
 // TODO --------- LAYOUT ---------
 @import "./sass/layout/footer";
@@ -15,3 +17,5 @@
 
 // TODO --------- PAGES ---------
 @import "./sass/pages/home";
+@import "./sass/pages/login";
+@import "./sass/pages/register";
