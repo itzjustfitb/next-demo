@@ -6,6 +6,7 @@ import Home from "./components/Home/Home";
 import Login from "./components/Auth/Login/Login";
 import Register from "./components/Auth/Register/Register";
 import { useEffect, useState } from "react";
+import Courses from "./components/Courses/Courses";
 
 function App() {
   const location = useLocation();
@@ -23,6 +24,7 @@ function App() {
       {activateLayout ? <Header /> : ""}
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/courses" element={<Courses />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
