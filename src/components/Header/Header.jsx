@@ -5,8 +5,7 @@ import HeaderAuth from "./HeaderAuth";
 import HeaderControls from "./HeaderControls";
 
 function Header() {
-  const [authActive, setAuthActive] = useState(true);
-  const [navigationActive, setNavigationActive] = useState("");
+  const [authActive, setAuthActive] = useState(false);
 
   const navigations = [
     {
@@ -31,7 +30,7 @@ function Header() {
     },
     {
       label: "Contacts",
-      value: "/contacts",
+      value: "/contact-us",
     },
   ];
 
@@ -46,10 +45,11 @@ function Header() {
             <Link
               key={index}
               className={
-                navigation.label === navigationActive ? "active-navigation" : ""
+                navigation.value === location.pathname
+                  ? "active-navigation"
+                  : ""
               }
               to={navigation.value}
-              onClick={() => setNavigationActive(navigation.label)}
             >
               {navigation.label}
             </Link>

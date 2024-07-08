@@ -1,22 +1,22 @@
-#courses {
+#jobs {
   padding: 40px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  .courses__container {
+  .jobs__container {
     width: 80%;
     display: flex;
     flex-direction: column;
     gap: 48px;
-    .courses__bottom {
+    .jobs__bottom {
       display: flex;
-      .courses__cards {
+      .jobs__cards {
         width: 100%;
         display: flex;
         flex-direction: column;
         gap: 72px;
         align-items: end;
-        .courses__cards-container {
+        .jobs__cards-container {
           width: 100%;
           display: grid;
           grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));

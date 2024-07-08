@@ -724,6 +724,30 @@ body {
   opacity: 1;
 }
 
+.page__header-top {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.page__header-top .page__header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.page__header-top .page__header-content h1 {
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 510;
+  line-height: normal;
+}
+.page__header-top .page__header-content p {
+  color: #5f5f5f;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
 footer {
   padding: 40px 0;
   display: flex;
@@ -775,6 +799,7 @@ header .header__container nav a {
   font-style: normal;
   font-weight: 510;
   line-height: normal;
+  transition: 0.4s;
 }
 header .header__container nav .active-navigation {
   color: #6875d1;
@@ -1103,29 +1128,6 @@ header .header__container .header__controls span:hover {
   flex-direction: column;
   gap: 48px;
 }
-#courses .courses__container .courses__top {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-#courses .courses__container .courses__top .courses__header {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-#courses .courses__container .courses__top .courses__header h1 {
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 510;
-  line-height: normal;
-}
-#courses .courses__container .courses__top .courses__header p {
-  color: #5f5f5f;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-}
 #courses .courses__container .courses__bottom {
   display: flex;
 }
@@ -1445,4 +1447,114 @@ header .header__container .header__controls span:hover {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+#jobs {
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#jobs .jobs__container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+#jobs .jobs__container .jobs__bottom {
+  display: flex;
+}
+#jobs .jobs__container .jobs__bottom .jobs__cards {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+  align-items: end;
+}
+#jobs .jobs__container .jobs__bottom .jobs__cards .jobs__cards-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+#jobs .jobs__container .jobs__bottom .jobs__cards > a {
+  border: 1px solid #6875d1;
+  color: #6875d1;
+}
+#jobs .jobs__container .active-container {
+  gap: 24px;
+}
+
+#contact-us {
+  padding: 70px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#contact-us .contact-us__container {
+  width: 80%;
+  display: grid;
+  gap: 90px;
+  grid-template-columns: 1fr 508px;
+}
+#contact-us .contact-us__container .contact-us__left {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+#contact-us .contact-us__container .contact-us__left .contact-us__left-header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+#contact-us .contact-us__container .contact-us__left .contact-us__left-header h1 {
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: -1.28px;
+}
+#contact-us .contact-us__container .contact-us__left .contact-us__left-header p {
+  color: #828282;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+#contact-us .contact-us__container .contact-us__left .contact-us__left-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+#contact-us .contact-us__container .contact-us__left .contact-us__left-form div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+#contact-us .contact-us__container .contact-us__left .contact-us__left-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 510;
+  line-height: normal;
+}
+#contact-us .contact-us__container .contact-us__left .contact-us__left-form a {
+  width: 100%;
+  color: #fff;
+  font-weight: 500;
+  line-height: 150%; /* 30px */
+}
+#contact-us .contact-us__container .contact-us__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+}
+#contact-us .contact-us__container .contact-us__right img {
+  border-radius: 6px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
 }
