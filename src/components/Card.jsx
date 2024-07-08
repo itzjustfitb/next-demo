@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function Card({ course }) {
+function Card({ course, id }) {
   const { job, companyLogo, company, image } = course;
 
   return (
@@ -13,23 +14,25 @@ function Card({ course }) {
             <p>{company}</p>
           </div>
         </div>
-        <span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="22"
-            height="22"
-            viewBox="0 0 22 22"
-            fill="none"
-          >
-            <path
-              d="M8.25 16.5L13.75 11L8.25 5.5"
-              stroke="white"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </span>
+        <Link to={`/courses/${id}`}>
+          <span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 22 22"
+              fill="none"
+            >
+              <path
+                d="M8.25 16.5L13.75 11L8.25 5.5"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </span>
+        </Link>
       </div>
       <div className="card__bottom">
         <img src={image} alt={job} />

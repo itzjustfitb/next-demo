@@ -7,6 +7,8 @@ import Login from "./components/Auth/Login/Login";
 import Register from "./components/Auth/Register/Register";
 import { useEffect, useState } from "react";
 import Courses from "./components/Courses/Courses";
+import Requirements from "./components/Requirements/Requirements";
+import Error from "./components/Error/Error";
 
 function App() {
   const location = useLocation();
@@ -25,8 +27,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/courses" element={<Courses />} />
+        <Route path="/courses/:id" element={<Requirements />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="*" element={<Error />} />
       </Routes>
       {activateLayout ? <Footer /> : ""}
     </>

@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import siteLogo from "../../assets/images/site-logo.svg";
 import HeaderAuth from "./HeaderAuth";
+import HeaderControls from "./HeaderControls";
 
 function Header() {
+  const [authActive, setAuthActive] = useState(true);
+  const [navigationActive, setNavigationActive] = useState("");
+
   const navigations = [
     {
       label: "Courses",
@@ -34,15 +38,24 @@ function Header() {
   return (
     <header>
       <div className="header__container">
-        <img src={siteLogo} alt="Next Us" />
+        <Link to="/">
+          <img src={siteLogo} alt="Next Us" />
+        </Link>
         <nav>
           {navigations.map((navigation, index) => (
-            <Link key={index} to={navigation.value}>
+            <Link
+              key={index}
+              className={
+                navigation.label === navigationActive ? "active-navigation" : ""
+              }
+              to={navigation.value}
+              onClick={() => setNavigationActive(navigation.label)}
+            >
               {navigation.label}
             </Link>
           ))}
         </nav>
-        <HeaderAuth />
+        {authActive ? <HeaderControls /> : <HeaderAuth />}
       </div>
     </header>
   );

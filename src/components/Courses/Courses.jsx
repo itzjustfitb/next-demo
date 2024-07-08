@@ -88,7 +88,7 @@ function Courses() {
           <div className="courses__cards">
             <div className="courses__cards-container">
               {courses.map((course, index) => (
-                <Card key={index} course={course} />
+                <Card key={index} course={course} id={index} />
               ))}
             </div>
             <DefaultBtn>See more</DefaultBtn>

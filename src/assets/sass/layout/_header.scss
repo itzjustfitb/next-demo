@@ -18,6 +18,13 @@ header {
       a {
         text-decoration: none;
         color: $text-color-1;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 510;
+        line-height: normal;
+      }
+      .active-navigation {
+        color: $purple-color-1;
       }
     }
     .header__auth {
@@ -28,6 +35,25 @@ header {
           &:hover {
             border: 1px solid $black-color;
           }
+        }
+      }
+    }
+    .header__controls {
+      display: flex;
+      gap: 8px;
+      span {
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
+        padding: 12px;
+        border-radius: 50%;
+        transition: 0.4s;
+        background-color: $card-color-1;
+        &:last-child {
+          background-color: $yellow-color-1;
+        }
+        &:hover {
+          opacity: 0.7;
         }
       }
     }
