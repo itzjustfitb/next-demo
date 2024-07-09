@@ -31,7 +31,7 @@
         color: $black-color;
         font-size: 16px;
         font-style: normal;
-        font-weight: 510;
+        font-weight: 500;
         line-height: normal;
       }
     }
@@ -41,12 +41,12 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    span {
+    .testimonials__card-logo {
       background-color: $purple-color-1;
       padding: 6px;
       border-radius: 50%;
-      width: 27px;
-      height: 27px;
+      width: 15px;
+      height: 15px;
       display: flex;
       justify-content: center;
       align-items: center;

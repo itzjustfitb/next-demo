@@ -11,7 +11,7 @@ function TestimonialCard({ testimonials }) {
         </div>
       </div>
       <div className="testimonial__card-bottom">
-        <span>
+        <span className="testimonials__card-logo">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="15"

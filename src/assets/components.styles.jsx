@@ -8,7 +8,7 @@ export const DefaultBtn = styled.a(({ color }) => ({
   backgroundColor: color,
   padding: "12px 28px ",
   width: "fit-content",
-  fontWeight: 600,
+  fontWeight: 500,
   boxSizing: "border-box",
   display: "flex",
   justifyContent: "center",
