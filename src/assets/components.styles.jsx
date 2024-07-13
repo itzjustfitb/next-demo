@@ -6,7 +6,7 @@ export const DefaultBtn = styled.a(({ color }) => ({
   color: "black",
   cursor: "pointer",
   backgroundColor: color,
-  padding: "12px 28px ",
+  padding: "12px 28px",
   width: "fit-content",
   fontWeight: 500,
   boxSizing: "border-box",

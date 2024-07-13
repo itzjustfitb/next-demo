@@ -11,11 +11,14 @@ import Requirements from "./components/Requirements/Requirements";
 import Error from "./components/Error/Error";
 import Jobs from "./components/Jobs/Jobs";
 import ContactUs from "./components/ContactUs/ContactUs";
+import Application from "./components/Application/Application";
+import ConfirmModal from "./components/Modal/ConfirmModal";
 
 function App() {
   const location = useLocation();
   const [activateLayout, setActivateLayout] = useState(true);
   const [activeFilter, setActiveFilter] = useState(false);
+  const [activeModal, setActiveModal] = useState("");
   useEffect(() => {
     if (location.pathname === "/login" || location.pathname === "/register") {
       setActivateLayout(false);
@@ -50,9 +53,16 @@ function App() {
         <Route path="/courses/:id" element={<Requirements />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route
+          path="/application"
+          element={<Application setActiveModal={setActiveModal} />}
+        />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="*" element={<Error />} />
       </Routes>
+
+      <ConfirmModal setActiveModal={setActiveModal} activeModal={activeModal} />
+
       {activateLayout ? <Footer /> : ""}
     </>
   );
