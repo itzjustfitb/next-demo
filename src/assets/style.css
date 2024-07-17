@@ -945,6 +945,7 @@ a {
   color: #181818;
   font-size: 14px;
   font-weight: 400;
+  line-height: normal;
 }
 .post-card .post-card__translation {
   margin-top: 16px;
