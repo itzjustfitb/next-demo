@@ -1674,23 +1674,22 @@ header .header__container .header__controls span:hover {
   display: flex;
   gap: 12px;
 }
-#error .error__container .error__left .error__buttons a {
+#error .error__container .error__left .error__buttons button {
   padding: 12px 20px;
   font-size: 16px;
-  font-style: normal;
   font-weight: 500;
-  line-height: normal;
 }
-#error .error__container .error__left .error__buttons a span {
+#error .error__container .error__left .error__buttons button span {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#error .error__container .error__left .error__buttons a:first-child {
+#error .error__container .error__left .error__buttons button:first-child {
   color: #5f5f5f;
   border-color: #d0d5dd;
+  background-color: transparent;
 }
-#error .error__container .error__left .error__buttons a:last-child {
+#error .error__container .error__left .error__buttons button:last-child {
   color: #fff;
   background-color: #6875d1;
   border-color: #6875d1;

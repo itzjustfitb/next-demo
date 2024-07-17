@@ -42,12 +42,10 @@
       .error__buttons {
         display: flex;
         gap: 12px;
-        a {
+        button {
           padding: 12px 20px;
           font-size: 16px;
-          font-style: normal;
           font-weight: 500;
-          line-height: normal;
           span {
             display: flex;
             justify-content: center;
@@ -56,6 +54,7 @@
           &:first-child {
             color: $text-color-1;
             border-color: $border-color-6;
+            background-color: transparent;
           }
           &:last-child {
             color: $white-color;

@@ -1,6 +1,7 @@
 import React from "react";
 import { DefaultBtn } from "../../assets/components.styles";
 import errorImage from "../../assets/images/error-image.png";
+import { Link } from "react-router-dom";
 
 function Error() {
   return (
@@ -36,7 +37,9 @@ function Error() {
               </span>
               Go back
             </DefaultBtn>
-            <DefaultBtn href="/">Take me home</DefaultBtn>
+            <Link to="/">
+              <DefaultBtn>Take me home</DefaultBtn>
+            </Link>
           </div>
         </div>
         <div className="error__right">
