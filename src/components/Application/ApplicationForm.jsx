@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { DefaultBtn } from "../../assets/components.styles";
 import { TextField } from "@mui/material";
 
 function ApplicationForm({ setActiveStep, setActiveForm }) {
+  const [inputs, setInputs] = useState({
+    fullName: "",
+    email: "",
+    salaryExp: "",
+    currency: "",
+    date: "",
+    file: "",
+  });
+  const [isDisabled, setIsDisabled] = useState(true);
+
+  const checkForm = (obj) => {
+    return Object.values(obj).every((value) => value !== null && value !== "");
+  };
+
+  useEffect(() => {
+    setIsDisabled(!checkForm(inputs));
+  }, [inputs]);
+
   return (
     <form className="application__form">
       <div className="application__form-inputs">
@@ -11,30 +29,41 @@ function ApplicationForm({ setActiveStep, setActiveForm }) {
           label="Full Name"
           variant="outlined"
           type="text"
+          value={inputs.fullName}
+          onChange={(e) => setInputs({ ...inputs, fullName: e.target.value })}
         />
         <TextField
           className="application__form-input"
           label="Email"
           variant="outlined"
           type="email"
+          value={inputs.email}
+          onChange={(e) => setInputs({ ...inputs, email: e.target.value })}
         />
         <TextField
           className="application__form-input"
           label="Salary expectation"
           variant="outlined"
           type="number"
+          value={inputs.salaryExp}
+          onChange={(e) => setInputs({ ...inputs, salaryExp: e.target.value })}
         />
         <TextField
           className="application__form-input"
           label="Currency"
           variant="outlined"
           type="number"
+          value={inputs.currency}
+          onChange={(e) => setInputs({ ...inputs, currency: e.target.value })}
         />
         <TextField
           className="application__form-input"
           label="Start date"
           variant="outlined"
           type="number"
+          value={inputs.date}
+          onChange={(e) => setInputs({ ...inputs, date: e.target.value })}
+          InputLabelProps={{ shrink: true }}
         />
       </div>
       <div className="application__upload">
@@ -57,9 +86,9 @@ function ApplicationForm({ setActiveStep, setActiveForm }) {
                     <path
                       d="M32.2286 16.3492L18.7052 29.8727C15.6298 32.948 10.6436 32.948 7.56825 29.8727C4.49287 26.7973 4.49287 21.8111 7.56825 18.7357L21.0917 5.21231C23.1419 3.16206 26.466 3.16206 28.5163 5.21231C30.5665 7.26256 30.5665 10.5867 28.5163 12.6369L15.5232 25.63C14.4981 26.6551 12.836 26.6551 11.8109 25.63C10.7858 24.6049 10.7858 22.9428 11.8109 21.9177L23.213 10.5156"
                       stroke="black"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                   </svg>
                 </span>
@@ -67,11 +96,17 @@ function ApplicationForm({ setActiveStep, setActiveForm }) {
               </div>
               <p>Only PDF or DOCX file (max 2mb)</p>
             </div>
-            <input type="file" />
+            <input
+              type="file"
+              onChange={(e) =>
+                setInputs({ ...inputs, file: e.target.files[0] })
+              }
+            />
           </label>
         </div>
       </div>
       <DefaultBtn
+        disabled={isDisabled}
         onClick={() => {
           setActiveStep((prev) => prev + 1);
           setActiveForm(true);

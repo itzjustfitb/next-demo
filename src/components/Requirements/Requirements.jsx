@@ -7,15 +7,15 @@ function Requirements() {
   const requirementsDetails = [
     {
       label: "Salary",
-      value: 20,
+      value: 500,
     },
     {
       label: "Job type",
-      value: "Part - time",
+      value: "Full - time",
     },
     {
       label: "Skill",
-      value: "Junior",
+      value: "Middle",
     },
     {
       label: "Number of Applicants",

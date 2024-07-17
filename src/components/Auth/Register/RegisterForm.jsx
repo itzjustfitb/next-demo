@@ -68,7 +68,7 @@ function RegisterForm() {
               )}
             </span>
           </div>
-          <DefaultBtn color="#FFE81D">Sign up</DefaultBtn>
+          <DefaultBtn>Sign up</DefaultBtn>
         </form>
         <p>or</p>
         <DefaultBtn>

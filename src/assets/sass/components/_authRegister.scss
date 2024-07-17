@@ -1,4 +1,5 @@
 .auth__register {
+  padding: 40px 0;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -31,7 +32,7 @@
       display: flex;
       flex-direction: column;
       .MuiFormControl-root {
-        margin-top: 32px;
+        margin-top: 20px;
         .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root {
           color: $purple-color-1;
         }
@@ -67,12 +68,14 @@
           align-items: center;
         }
       }
-      a {
+      button {
         margin-top: 20px;
-        padding: 16px 8px;
+        padding: 16px 8px !important;
         font-size: 18px;
         font-weight: 600;
         width: 100%;
+        background-color: $yellow-color-1;
+        border-color: $yellow-color-1;
       }
     }
     > p {
@@ -101,16 +104,17 @@
         left: 0;
       }
     }
-    > a {
+    > button {
       margin-top: 20px;
       width: 100%;
       padding: 16px 8px;
       font-size: 18px;
       font-weight: 600;
       border: 1px solid $border-color-4;
+      background-color: transparent;
     }
     .auth__register-account {
-      margin-top: 32px;
+      margin-top: 20px;
       display: flex;
       justify-content: center;
       gap: 5px;

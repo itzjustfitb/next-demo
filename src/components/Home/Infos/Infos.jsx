@@ -14,7 +14,7 @@ function Infos() {
               students who attend traditional in-person classes due to their
               location, schedule.
             </p>
-            <DefaultBtn color="#ffe81d">Get Started</DefaultBtn>
+            <DefaultBtn>Get Started</DefaultBtn>
           </div>
         </div>
         <div className="infos__row">
@@ -25,7 +25,7 @@ function Infos() {
               students who attend traditional in-person classes due to their
               location, schedule.
             </p>
-            <DefaultBtn color="#ffe81d">Get Started</DefaultBtn>
+            <DefaultBtn>Get Started</DefaultBtn>
           </div>
           <img src={infosImg} alt="Infos Image" />
         </div>

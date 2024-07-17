@@ -29,6 +29,7 @@ function ApplicationLetter({ setActiveForm, setActiveModal, setActiveStep }) {
           Back
         </DefaultBtn>
         <DefaultBtn
+          disabled={letter.length > 0 ? false : true}
           onClick={() => setActiveModal("confirm-modal")}
           color="#6875D1"
         >

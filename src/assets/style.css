@@ -135,6 +135,10 @@ body {
   font-family: "Poppins";
 }
 
+a {
+  text-decoration: none;
+}
+
 .service__card {
   display: flex;
   flex-direction: column;
@@ -264,7 +268,7 @@ body {
   flex-direction: column;
 }
 .auth__login .auth__login-container form .MuiFormControl-root {
-  margin-top: 32px;
+  margin-top: 20px;
 }
 .auth__login .auth__login-container form .MuiFormControl-root .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root {
   color: #6875d1;
@@ -295,7 +299,7 @@ body {
   align-items: center;
 }
 .auth__login .auth__login-container form .auth__login-remember {
-  margin: 32px 0 20px;
+  margin: 20px 0 20px;
 }
 .auth__login .auth__login-container form .auth__login-remember label {
   display: flex;
@@ -311,11 +315,13 @@ body {
   width: 18px;
   height: 18px;
 }
-.auth__login .auth__login-container form a {
+.auth__login .auth__login-container form button {
   padding: 16px 8px;
   font-size: 18px;
   font-weight: 600;
   width: 100%;
+  background-color: #ffe81d;
+  border-color: #ffe81d;
 }
 .auth__login .auth__login-container > p {
   margin-top: 20px;
@@ -342,13 +348,14 @@ body {
 .auth__login .auth__login-container > p::before {
   left: 0;
 }
-.auth__login .auth__login-container > a {
+.auth__login .auth__login-container > button {
   margin-top: 20px;
   padding: 16px 8px;
   font-weight: 600;
   font-size: 18px;
   width: 100%;
   border: 1px solid #e6e8e7;
+  background-color: transparent;
 }
 .auth__login .auth__login-container .auth__login-account {
   margin-top: 32px;
@@ -374,6 +381,7 @@ body {
 }
 
 .auth__register {
+  padding: 40px 0;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -409,7 +417,7 @@ body {
   flex-direction: column;
 }
 .auth__register .auth__register-container form .MuiFormControl-root {
-  margin-top: 32px;
+  margin-top: 20px;
 }
 .auth__register .auth__register-container form .MuiFormControl-root .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root {
   color: #6875d1;
@@ -443,12 +451,14 @@ body {
   background-color: transparent;
   align-items: center;
 }
-.auth__register .auth__register-container form a {
+.auth__register .auth__register-container form button {
   margin-top: 20px;
-  padding: 16px 8px;
+  padding: 16px 8px !important;
   font-size: 18px;
   font-weight: 600;
   width: 100%;
+  background-color: #ffe81d;
+  border-color: #ffe81d;
 }
 .auth__register .auth__register-container > p {
   margin-top: 20px;
@@ -475,16 +485,17 @@ body {
 .auth__register .auth__register-container > p::before {
   left: 0;
 }
-.auth__register .auth__register-container > a {
+.auth__register .auth__register-container > button {
   margin-top: 20px;
   width: 100%;
   padding: 16px 8px;
   font-size: 18px;
   font-weight: 600;
   border: 1px solid #e6e8e7;
+  background-color: transparent;
 }
 .auth__register .auth__register-container .auth__register-account {
-  margin-top: 32px;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   gap: 5px;
@@ -774,7 +785,6 @@ body {
   display: flex;
   opacity: 0;
   visibility: hidden;
-  transition: 0.4s;
   justify-content: center;
   align-items: center;
   z-index: 11;
@@ -790,7 +800,6 @@ body {
   border-radius: 6px;
   display: flex;
   flex-direction: column;
-  gap: 60px;
 }
 .modal .modal__container .modal__container-header {
   display: flex;
@@ -809,39 +818,167 @@ body {
   font-weight: 400;
   line-height: normal;
 }
-.modal .modal__container .modal__container-rows {
+.modal .modal__container .modal-confirm {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+.modal .modal__container .modal-confirm .modal__container-rows {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-.modal .modal__container .modal__container-rows .modal__container-row {
+.modal .modal__container .modal-confirm .modal__container-rows .modal__container-row {
   display: flex;
   gap: 5px;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
 }
-.modal .modal__container .modal__container-rows .modal__container-row p {
+.modal .modal__container .modal-confirm .modal__container-rows .modal__container-row p {
   font-weight: 400;
 }
-.modal .modal__container .modal__container-buttons {
+.modal .modal__container .modal-confirm .modal__container-buttons {
   display: grid;
   grid-template-columns: 1.5fr 2fr;
   gap: 24px;
 }
-.modal .modal__container .modal__container-buttons a {
+.modal .modal__container .modal-confirm .modal__container-buttons button {
   width: 100%;
-  color: #6875d1;
   border-color: #6875d1;
 }
-.modal .modal__container .modal__container-buttons a:last-child {
+.modal .modal__container .modal-confirm .modal__container-buttons button:first-child {
+  color: #6875d1;
+  background-color: transparent;
+}
+.modal .modal__container .modal-confirm .modal__container-buttons button:last-child {
   color: #fff;
+  background-color: #6875d1;
+}
+.modal .modal__container .modal-congrats {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.modal .modal__container .modal-congrats button {
+  color: #fff;
+  background-color: #6875d1;
+  border-color: #6875d1;
 }
 
-.confirm-modal {
+.active-modal {
   opacity: 1;
   visibility: visible;
   transform: translateX(0px);
+}
+.active-modal .modal__container {
+  animation: modal 0.4s;
+}
+
+@keyframes modal {
+  0% {
+    transform: scale(0.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.tooltip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #6875d1;
+  position: absolute;
+  color: #fff;
+  color: #f7f7f7;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+  transition: 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(5px);
+}
+
+.tooltip-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.post-card {
+  padding: 20px 12px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f7f7;
+  border-radius: 6px;
+}
+.post-card .post-card__top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.post-card .post-card__top img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.post-card .post-card__top .post-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.post-card .post-card__top .post-card__header h1 {
+  color: #181818;
+  font-size: 16px;
+  font-weight: 500;
+}
+.post-card .post-card__top .post-card__header h3,
+.post-card .post-card__top .post-card__header p {
+  color: #8f8f8f;
+  font-size: 14px;
+  font-weight: 500;
+}
+.post-card .post-card__content {
+  margin-top: 20px;
+  color: #181818;
+  font-size: 14px;
+  font-weight: 400;
+}
+.post-card .post-card__translation {
+  margin-top: 16px;
+  color: #4f59a9;
+  font-size: 14px;
+  font-weight: 500;
+}
+.post-card > img {
+  margin-top: 8px;
+  border-radius: 2px;
+  height: 159px;
+}
+.post-card .post-card__border {
+  margin-top: 16px;
+  background-color: #d9defd;
+  width: 100%;
+  height: 1px;
+}
+.post-card .post-card__actions {
+  margin-top: 16px;
+  display: flex;
+  gap: 14px;
+}
+.post-card .post-card__actions span {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.post-card .post-card__stat {
+  margin-top: 12px;
+  color: #8290fa;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 footer {
@@ -904,8 +1041,13 @@ header .header__container .header__auth {
   display: flex;
   gap: 10px;
 }
-header .header__container .header__auth a:first-child:hover {
-  border: 1px solid #000;
+header .header__container .header__auth a:first-child button {
+  background-color: transparent;
+  border: none;
+}
+header .header__container .header__auth a:last-child button {
+  background-color: #ffe81d;
+  border-color: #ffe81d;
 }
 header .header__container .header__controls {
   display: flex;
@@ -959,6 +1101,10 @@ header .header__container .header__controls span:hover {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
+}
+#hero .hero__container .hero__left button {
+  background-color: #ffe81d;
+  border-color: #ffe81d;
 }
 #hero .hero__container .hero__right {
   position: relative;
@@ -1081,6 +1227,10 @@ header .header__container .header__controls span:hover {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+#infos .infos__container .infos__row div button {
+  background-color: #ffe81d;
+  border-color: #ffe81d;
 }
 
 #services {
@@ -1249,9 +1399,10 @@ header .header__container .header__controls span:hover {
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 24px;
 }
-#courses .courses__container .courses__bottom .courses__cards > a {
+#courses .courses__container .courses__bottom .courses__cards > button {
   border: 1px solid #6875d1;
   color: #6875d1;
+  background-color: transparent;
 }
 #courses .courses__container .active-container {
   gap: 24px;
@@ -1334,10 +1485,7 @@ header .header__container .header__controls span:hover {
 #requirements .requirements__container .requirements__bottom .requirements__categories .requirements__apply {
   width: 100%;
   border: 1px solid #ffe81d;
-}
-#requirements .requirements__container .requirements__bottom .requirements__categories .requirements__apply:hover {
   background-color: #ffe81d;
-  opacity: 1;
 }
 #requirements .requirements__container .requirements__bottom .requirements__content {
   background-color: #f7f7f7;
@@ -1401,16 +1549,15 @@ header .header__container .header__controls span:hover {
 }
 #requirements .requirements__container .requirements__bottom .requirements__content .requirements__content-details {
   margin-bottom: 40px;
-  display: grid;
+  display: flex;
   gap: 12px;
-  grid-template-columns: 1fr 1fr 1fr 2fr 1fr;
 }
 #requirements .requirements__container .requirements__bottom .requirements__content .requirements__content-details .requirements__content-detail {
   display: flex;
   flex-direction: column;
-  height: -moz-fit-content;
-  height: fit-content;
   padding: 16px 22px;
+  align-items: center;
+  justify-content: center;
   gap: 12px;
   background-color: #060916;
   color: #fff;
@@ -1422,14 +1569,12 @@ header .header__container .header__controls span:hover {
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
-  line-height: normal;
 }
 #requirements .requirements__container .requirements__bottom .requirements__content .requirements__content-details .requirements__content-detail p {
   color: #fcfcfc;
   font-size: 18px;
   font-style: normal;
   font-weight: 590;
-  line-height: normal;
 }
 #requirements .requirements__container .requirements__bottom .requirements__content .requirements__content-details .requirements__content-detail p span {
   font-size: 16px;
@@ -1441,9 +1586,16 @@ header .header__container .header__controls span:hover {
   grid-template-columns: 1fr 1fr;
   gap: 22px;
 }
-#requirements .requirements__container .requirements__bottom .requirements__content .requirements__buttons a {
-  padding: 20px 86px;
+#requirements .requirements__container .requirements__bottom .requirements__content .requirements__buttons button {
   width: 100%;
+  padding: 20px 86px;
+  font-size: 16px;
+  background-color: #ffe81d;
+  border-color: #ffe81d;
+}
+#requirements .requirements__container .requirements__bottom .requirements__content .requirements__buttons button:last-child {
+  background-color: #fff;
+  border-color: #fff;
 }
 #requirements .requirements__container .requirements__bottom .requirements__content .requirements__row {
   display: flex;
@@ -1582,9 +1734,10 @@ header .header__container .header__controls span:hover {
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 24px;
 }
-#jobs .jobs__container .jobs__bottom .jobs__cards > a {
+#jobs .jobs__container .jobs__bottom .jobs__cards > button {
   border: 1px solid #6875d1;
   color: #6875d1;
+  background-color: transparent;
 }
 #jobs .jobs__container .active-container {
   gap: 24px;
@@ -1644,11 +1797,12 @@ header .header__container .header__controls span:hover {
   font-weight: 500;
   line-height: normal;
 }
-#contact-us .contact-us__container .contact-us__left .contact-us__left-form a {
+#contact-us .contact-us__container .contact-us__left .contact-us__left-form button {
   width: 100%;
   color: #fff;
+  background-color: #6875d1;
+  border-color: #6875d1;
   font-weight: 500;
-  line-height: 150%; /* 30px */
 }
 #contact-us .contact-us__container .contact-us__right {
   display: flex;
@@ -1793,9 +1947,6 @@ header .header__container .header__controls span:hover {
   font-family: "Poppins";
   color: #232323;
 }
-#application .application__container .application__bottom .application__form .application__form-inputs .application__form-input .Mui-focused {
-  color: #6875d1;
-}
 #application .application__container .application__bottom .application__form .application__form-inputs .application__form-input .Mui-focused .MuiOutlinedInput-notchedOutline {
   border-color: #6875d1;
 }
@@ -1864,10 +2015,11 @@ header .header__container .header__controls span:hover {
 #application .application__container .application__bottom .application__form .application__upload .application__upload-input label input {
   display: none;
 }
-#application .application__container .application__bottom .application__form > a {
+#application .application__container .application__bottom .application__form button {
   margin-top: 72px;
-  border-color: #8f8f8f;
-  color: #8f8f8f;
+  background-color: #6875d1;
+  color: #fff;
+  border-color: #6875d1;
 }
 #application .application__container .application__bottom .application__letter {
   display: flex;
@@ -1920,10 +2072,414 @@ header .header__container .header__controls span:hover {
   gap: 24px;
   justify-content: end;
 }
-#application .application__container .application__bottom .application__letter .application__letter-buttons a {
+#application .application__container .application__bottom .application__letter .application__letter-buttons button {
+  border-color: #6875d1;
+}
+#application .application__container .application__bottom .application__letter .application__letter-buttons button:first-child {
+  background-color: transparent;
+  color: #6875d1;
+}
+#application .application__container .application__bottom .application__letter .application__letter-buttons button:last-child {
+  color: #fff;
+  background-color: #6875d1;
+}
+
+#profile {
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#profile .profile__container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+#profile .profile__container .profile__background {
+  position: relative;
+}
+#profile .profile__container .profile__background img {
+  width: 100%;
+  height: 320px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#profile .profile__container .profile__background .profile__background-select {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+}
+#profile .profile__container .profile__background label {
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  background-color: #f7f7f7;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+#profile .profile__container .profile__background label:hover {
+  opacity: 0.7;
+}
+#profile .profile__container .profile__background input {
+  display: none;
+}
+#profile .profile__container .profile__picture {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-left: 56px;
+  margin-top: -120px;
+  z-index: 1;
+  border: 6px solid #fff;
+  position: relative;
+}
+#profile .profile__container .profile__picture img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+#profile .profile__container .profile__picture label {
+  cursor: pointer;
+  top: 0;
+  right: 0;
+  position: absolute;
+  transition: 0.4s;
+}
+#profile .profile__container .profile__picture label:hover {
+  opacity: 0.7;
+}
+#profile .profile__container .profile__picture label span {
+  width: 48px;
+  height: 48px;
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+#profile .profile__container .profile__picture label input {
+  display: none;
+}
+#profile .profile__container .profile__header {
+  display: flex;
+  justify-content: space-between;
+}
+#profile .profile__container .profile__header .profile__left {
+  margin-top: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#profile .profile__container .profile__header .profile__left .profile__info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+#profile .profile__container .profile__header .profile__left .profile__info .profile__explanation {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: #181818;
+  font-style: normal;
+}
+#profile .profile__container .profile__header .profile__left .profile__info .profile__explanation h1 {
+  font-size: 36px;
+  font-weight: 500;
+}
+#profile .profile__container .profile__header .profile__left .profile__info .profile__explanation p {
+  font-size: 24px;
+  font-weight: 400;
+}
+#profile .profile__container .profile__header .profile__left .profile__info > p {
+  color: #6875d1;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+}
+#profile .profile__container .profile__header .profile__left a {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+#profile .profile__container .profile__header .profile__left a button {
+  background-color: #6875d1;
+  border-color: #6875d1;
   color: #fff;
 }
-#application .application__container .application__bottom .application__letter .application__letter-buttons a:first-child {
-  border-color: #6875d1;
+#profile .profile__container .profile__header .profile__right {
+  position: relative;
+  display: flex;
+  padding: 28px 16px;
+  background-color: #f7f7f7;
+  border-radius: 6px;
+  gap: 104px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+#profile .profile__container .profile__header .profile__right .profile__share {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+#profile .profile__container .profile__header .profile__right .profile__share h1 {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+}
+#profile .profile__container .profile__header .profile__right .profile__share p {
+  max-width: 300px;
+  word-wrap: break-word;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+}
+#profile .profile__container .profile__header .profile__right .tooltip {
+  right: -26px;
+  top: -24px;
+}
+#profile .profile__container .profile__header .profile__right span {
+  cursor: pointer;
+  transition: 0.4s;
+}
+#profile .profile__container .profile__header .profile__right span:hover {
+  opacity: 0.7;
+}
+#profile .profile__container .profile__about {
+  display: grid;
+  grid-template-columns: 1fr 48px;
+  margin-top: 68px;
+  padding: 42px 32px 42px 24px;
+  background-color: #f7f7f7;
+  border-radius: 6px;
+}
+#profile .profile__container .profile__about .profile__about-me {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+#profile .profile__container .profile__about .profile__about-me h1 {
+  color: #181818;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+#profile .profile__container .profile__about .profile__about-me p {
+  color: #181818;
+  font-size: 20px;
+  font-style: normal;
+  word-break: break-all;
+  font-weight: 400;
+}
+#profile .profile__container .profile__about .profile__about-me .profile__about-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: end;
+}
+#profile .profile__container .profile__about .profile__about-me .profile__about-edit .MuiFormControl-root {
+  width: 100%;
+  font-family: "Poppins";
+}
+#profile .profile__container .profile__about .profile__about-me .profile__about-edit .MuiFormControl-root label {
+  font-family: "Poppins";
+  padding-right: 5px;
+  background-color: #f7f7f7;
+}
+#profile .profile__container .profile__about .profile__about-me .profile__about-edit .MuiFormControl-root textarea {
+  font-family: "Poppins";
+}
+#profile .profile__container .profile__about .profile__about-me .profile__about-edit .MuiFormControl-root .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root {
   color: #6875d1;
+}
+#profile .profile__container .profile__about .profile__about-me .profile__about-edit .MuiFormControl-root .Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #6875d1;
+}
+#profile .profile__container .profile__about .profile__about-me .profile__about-edit .MuiFormControl-root .css-dpjnhs-MuiInputBase-root-MuiOutlinedInput-root {
+  border-radius: 8px;
+}
+#profile .profile__container .profile__about .profile__about-me .profile__about-edit .MuiFormControl-root input {
+  font-family: "Poppins" !important;
+}
+#profile .profile__container .profile__about .profile__about-me .profile__about-edit button {
+  background-color: #6875d1;
+  border-color: #6875d1;
+  color: #fff;
+}
+#profile .profile__container .profile__about span {
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background-color: #fff;
+  transition: 0.4s;
+}
+#profile .profile__container .profile__about span:hover {
+  opacity: 0.7;
+}
+#profile .profile__container .profile__bookings {
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+#profile .profile__container .profile__bookings .profile__bookings-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#profile .profile__container .profile__bookings .profile__bookings-top h1 {
+  color: #181818;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 510;
+  line-height: normal;
+}
+#profile .profile__container .profile__bookings .profile__bookings-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+#share-post {
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#share-post .share-post__container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 92px;
+}
+#share-post .share-post__container .share-post__top {
+  display: flex;
+  gap: 28px;
+}
+#share-post .share-post__container .share-post__top span {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #6875d1;
+}
+#share-post .share-post__container .share-post__top .share-post__header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#share-post .share-post__container .share-post__top .share-post__header h1 {
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 510;
+}
+#share-post .share-post__container .share-post__top .share-post__header p {
+  color: #5f5f5f;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+}
+#share-post .share-post__container .share-post__bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+#share-post .share-post__container .share-post__bottom form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+#share-post .share-post__container .share-post__bottom form .MuiFormControl-root label {
+  font-family: "Poppins";
+}
+#share-post .share-post__container .share-post__bottom form .MuiFormControl-root .MuiInputBase-root {
+  width: 277px;
+  border-radius: 6px;
+  font-family: "Poppins";
+}
+#share-post .share-post__container .share-post__bottom form .MuiFormControl-root .MuiInputBase-root .MuiSelect-select {
+  padding: 12px 0px 12px 52px;
+}
+#share-post .share-post__container .share-post__bottom form .MuiFormControl-root .MuiInputBase-root svg {
+  display: none;
+}
+#share-post .share-post__container .share-post__bottom form .MuiFormControl-root:last-child .MuiInputBase-root {
+  width: 392px;
+}
+#share-post .share-post__container .share-post__bottom form .MuiFormControl-root:last-child .MuiInputBase-root .MuiInputBase-input {
+  padding: 16px !important;
+}
+#share-post .share-post__container .share-post__bottom form .MuiFormControl-root > svg {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 16px;
+  width: 24px;
+  height: 24px;
+}
+#share-post .share-post__container .share-post__bottom .share-post__textarea {
+  margin-top: 56px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+#share-post .share-post__container .share-post__bottom .share-post__textarea .share-post__textarea-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+#share-post .share-post__container .share-post__bottom .share-post__textarea .share-post__textarea-header h1 {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 510;
+}
+#share-post .share-post__container .share-post__bottom .share-post__textarea .share-post__textarea-header p {
+  color: #5f5f5f;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+}
+#share-post .share-post__container .share-post__bottom .share-post__textarea .share-post__textarea-letter {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#share-post .share-post__container .share-post__bottom .share-post__textarea .share-post__textarea-letter p {
+  text-align: end;
+  color: #8f8f8f;
+  font-size: 16px;
+  font-weight: 500;
+}
+#share-post .share-post__container .share-post__bottom .share-post__textarea .MuiFormControl-root {
+  border-radius: 6px;
+}
+#share-post .share-post__container .share-post__bottom .share-post__textarea .MuiFormControl-root label {
+  font-family: "Poppins" !important;
+}
+#share-post .share-post__container .share-post__bottom .share-post__textarea .MuiFormControl-root .MuiInputBase-root {
+  font-family: "Poppins" !important;
+}
+#share-post .share-post__container .share-post__bottom .share-post__textarea .MuiFormControl-root .MuiInputBase-root textarea {
+  height: 300px !important;
+}
+#share-post .share-post__container .share-post__bottom button {
+  margin-top: 72px;
+  background-color: #6875d1;
+  color: #fff;
+  border-color: #6875d1;
+}
+
+.MuiPaper-root ul li {
+  font-family: "Poppins" !important;
 }

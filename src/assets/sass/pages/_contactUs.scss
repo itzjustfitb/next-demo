@@ -48,11 +48,12 @@
           font-weight: 500;
           line-height: normal;
         }
-        a {
+        button {
           width: 100%;
           color: $white-color;
+          background-color: $purple-color-1;
+          border-color: $purple-color-1;
           font-weight: 500;
-          line-height: 150%; /* 30px */
         }
       }
     }

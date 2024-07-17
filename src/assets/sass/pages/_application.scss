@@ -135,7 +135,6 @@
               }
             }
             .Mui-focused {
-              color: $purple-color-1;
               .MuiOutlinedInput-notchedOutline {
                 border-color: $purple-color-1;
               }
@@ -207,10 +206,11 @@
             }
           }
         }
-        > a {
+        button {
           margin-top: 72px;
-          border-color: $text-color-10;
-          color: $text-color-10;
+          background-color: $purple-color-1;
+          color: $white-color;
+          border-color: $purple-color-1;
         }
       }
       .application__letter {
@@ -266,11 +266,15 @@
           display: flex;
           gap: 24px;
           justify-content: end;
-          a {
-            color: $white-color;
+          button {
+            border-color: $purple-color-1;
             &:first-child {
-              border-color: $purple-color-1;
+              background-color: transparent;
               color: $purple-color-1;
+            }
+            &:last-child {
+              color: $white-color;
+              background-color: $purple-color-1;
             }
           }
         }

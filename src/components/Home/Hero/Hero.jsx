@@ -14,7 +14,7 @@ function Hero() {
               opportunities.
             </p>
           </div>
-          <DefaultBtn color="#FFE600">Get Started</DefaultBtn>
+          <DefaultBtn>Get Started</DefaultBtn>
         </div>
         <div className="hero__right">
           <div className="hero__right-rate">

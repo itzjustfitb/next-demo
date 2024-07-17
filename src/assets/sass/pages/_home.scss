@@ -28,6 +28,10 @@
           line-height: 24px;
         }
       }
+      button {
+        background-color: $yellow-color-1;
+        border-color: $yellow-color-1;
+      }
     }
     .hero__right {
       position: relative;
@@ -148,6 +152,10 @@
           font-style: normal;
           font-weight: 400;
           line-height: normal;
+        }
+        button {
+          background-color: $yellow-color-1;
+          border-color: $yellow-color-1;
         }
       }
     }

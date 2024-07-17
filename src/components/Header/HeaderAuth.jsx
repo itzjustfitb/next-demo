@@ -1,15 +1,16 @@
 import React from "react";
 import { DefaultBtn } from "../../assets/components.styles";
+import { Link } from "react-router-dom";
 
 function HeaderAuth() {
   return (
     <div className="header__auth">
-      <DefaultBtn href="/register" color="transparent">
-        Sign in
-      </DefaultBtn>
-      <DefaultBtn href="/login" color="#FFE600">
-        Login
-      </DefaultBtn>
+      <Link to="/register">
+        <DefaultBtn>Sign in</DefaultBtn>
+      </Link>
+      <Link to="/login">
+        <DefaultBtn>Login</DefaultBtn>
+      </Link>
     </div>
   );
 }

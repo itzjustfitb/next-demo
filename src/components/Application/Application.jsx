@@ -21,9 +21,9 @@ function Application({ setActiveModal }) {
               <path
                 d="M16.25 6.5L9.75 13L16.25 19.5"
                 stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </span>

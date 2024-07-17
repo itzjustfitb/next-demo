@@ -13,6 +13,10 @@ import Jobs from "./components/Jobs/Jobs";
 import ContactUs from "./components/ContactUs/ContactUs";
 import Application from "./components/Application/Application";
 import ConfirmModal from "./components/Modal/ConfirmModal";
+import CongratsModal from "./components/Modal/CongratsModal";
+import Modal from "./components/Modal/Modal";
+import Profile from "./components/Profile/Profile";
+import SharePost from "./components/SharePost/SharePost";
 
 function App() {
   const location = useLocation();
@@ -25,7 +29,7 @@ function App() {
     } else {
       setActivateLayout(true);
     }
-  }, []);
+  }, [location.pathname]);
 
   return (
     <>
@@ -58,10 +62,16 @@ function App() {
           element={<Application setActiveModal={setActiveModal} />}
         />
         <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile/share-post" element={<SharePost />} />
         <Route path="*" element={<Error />} />
       </Routes>
 
-      <ConfirmModal setActiveModal={setActiveModal} activeModal={activeModal} />
+      {activeModal.length > 0 ? (
+        <Modal setActiveModal={setActiveModal} activeModal={activeModal} />
+      ) : (
+        ""
+      )}
 
       {activateLayout ? <Footer /> : ""}
     </>

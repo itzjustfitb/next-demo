@@ -19,19 +19,25 @@ function ContactUs() {
             <div>
               <label>
                 First Name
-                <DefaultInput placeholder="First Name" type="text" />
+                <DefaultInput placeholder="Jane" type="text" />
               </label>
               <label>
-                Last name <DefaultInput placeholder="First Name" type="text" />
+                Last name <DefaultInput placeholder="Smitherton" type="text" />
               </label>
             </div>
             <label>
               Email address
-              <DefaultInput placeholder="First Name" type="email" />
+              <DefaultInput
+                placeholder="email@janesfakedomain.net"
+                type="email"
+              />
             </label>
             <label>
-              Your message{" "}
-              <DefaultTextArea placeholder="First Name" type="text" />
+              Your message
+              <DefaultTextArea
+                placeholder="Enter your question or message"
+                type="text"
+              />
             </label>
             <DefaultBtn color="#6875D1">Submit</DefaultBtn>
           </form>

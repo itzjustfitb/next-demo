@@ -22,9 +22,10 @@
           grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
           gap: 24px;
         }
-        > a {
+        > button {
           border: 1px solid $purple-color-1;
           color: $purple-color-1;
+          background-color: transparent;
         }
       }
     }

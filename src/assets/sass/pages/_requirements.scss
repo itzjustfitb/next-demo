@@ -71,10 +71,7 @@
         .requirements__apply {
           width: 100%;
           border: 1px solid $yellow-color-1;
-          &:hover {
-            background-color: $yellow-color-1;
-            opacity: 1;
-          }
+          background-color: $yellow-color-1;
         }
       }
       .requirements__content {
@@ -139,14 +136,14 @@
         }
         .requirements__content-details {
           margin-bottom: 40px;
-          display: grid;
+          display: flex;
           gap: 12px;
-          grid-template-columns: 1fr 1fr 1fr 2fr 1fr;
           .requirements__content-detail {
             display: flex;
             flex-direction: column;
-            height: fit-content;
             padding: 16px 22px;
+            align-items: center;
+            justify-content: center;
             gap: 12px;
             background-color: $purple-color-4;
             color: $white-color;
@@ -157,14 +154,12 @@
               font-size: 16px;
               font-style: normal;
               font-weight: 500;
-              line-height: normal;
             }
             p {
               color: $text-color-12;
               font-size: 18px;
               font-style: normal;
               font-weight: 590;
-              line-height: normal;
               span {
                 font-size: 16px;
                 font-weight: 400;
@@ -177,9 +172,16 @@
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 22px;
-          a {
-            padding: 20px 86px;
+          button {
             width: 100%;
+            padding: 20px 86px;
+            font-size: 16px;
+            background-color: $yellow-color-1;
+            border-color: $yellow-color-1;
+            &:last-child {
+              background-color: $white-color;
+              border-color: $white-color;
+            }
           }
         }
         .requirements__row {

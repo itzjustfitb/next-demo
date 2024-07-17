@@ -33,8 +33,15 @@ header {
       gap: 10px;
       a {
         &:first-child {
-          &:hover {
-            border: 1px solid $black-color;
+          button {
+            background-color: transparent;
+            border: none;
+          }
+        }
+        &:last-child {
+          button {
+            background-color: $yellow-color-1;
+            border-color: $yellow-color-1;
           }
         }
       }
