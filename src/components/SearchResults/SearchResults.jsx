@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function SearchResults({ list, activeFilter, setActiveFilter }) {
+function SearchResults({ error, list, activeFilter, setActiveFilter }) {
   const searchUser = (e) => {
     const filteredList = list.filter((filteredItem) =>
       filteredItem.title.toLowerCase().includes(e.target.value.toLowerCase())
@@ -78,7 +78,7 @@ function SearchResults({ list, activeFilter, setActiveFilter }) {
       <div className="search__results-found">
         <p>Search result</p>
         <p>
-          <span>{list.length} </span> Jobs Found
+          <span>{error ? 0 : list.length} </span> Jobs Found
         </p>
       </div>
     </div>

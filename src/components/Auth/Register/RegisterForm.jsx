@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import { DefaultBtn, DefaultInput } from "../../../assets/components.styles";
 import { TextField } from "@mui/material";
-
+import siteLogo from "../../../assets/images/site-logo-auth.png";
+import { Link } from "react-router-dom";
 function RegisterForm() {
   const [hidePass, setHidePass] = useState(false);
 
   return (
     <div className="auth__register">
+      <div className="auth__register-logo">
+        <Link to="/">
+          <img src={siteLogo} alt="" />
+        </Link>
+      </div>
       <div className="auth__register-container">
         <div className="auth__register-header">
           <h1>Sign up</h1>

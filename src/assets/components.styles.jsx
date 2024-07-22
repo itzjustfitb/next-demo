@@ -37,7 +37,7 @@ export const DefaultInput = styled.input({
   gap: "2px",
   borderRadius: "6px",
   border: "1.5px solid #D9D9D9",
-  fontFamily: "Poppins",
+  fontFamily: "Poppins !important",
   fontSize: 16,
   "&:focus": {
     outlineColor: "#6875D1",

@@ -10,6 +10,7 @@ function Collection({ activeFilter, setActiveFilter, collection, error }) {
     <section id="collection">
       <div className="collection__container">
         <PageHeader
+          error={error}
           list={collection}
           content={pageHeaderContent}
           activeFilter={activeFilter}

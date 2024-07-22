@@ -131,7 +131,9 @@ table {
   border-spacing: 0;
 }
 
-body {
+body,
+input,
+button {
   font-family: "Poppins";
 }
 
@@ -235,8 +237,19 @@ a {
 .auth__login {
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  gap: 106px;
+}
+.auth__login .auth__login-logo {
+  display: flex;
+  width: 100%;
+}
+.auth__login .auth__login-logo a {
+  width: 133px;
+  height: 86px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .auth__login .auth__login-container {
   width: 400px;
@@ -277,6 +290,10 @@ a {
 .auth__login .auth__login-container form .MuiFormControl-root .MuiFormLabel-root {
   font-family: "Poppins";
 }
+.auth__login .auth__login-container form .MuiFormControl-root label {
+  background-color: #fff;
+  padding-right: 5px;
+}
 .auth__login .auth__login-container form .MuiFormControl-root .Mui-focused .MuiOutlinedInput-notchedOutline {
   border-color: #6875d1;
 }
@@ -316,7 +333,6 @@ a {
   height: 18px;
 }
 .auth__login .auth__login-container form button {
-  padding: 16px 8px;
   font-size: 18px;
   font-weight: 600;
   width: 100%;
@@ -350,7 +366,6 @@ a {
 }
 .auth__login .auth__login-container > button {
   margin-top: 20px;
-  padding: 16px 8px;
   font-weight: 600;
   font-size: 18px;
   width: 100%;
@@ -381,11 +396,21 @@ a {
 }
 
 .auth__register {
-  padding: 40px 0;
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  gap: 106px;
+}
+.auth__register .auth__register-logo {
+  display: flex;
+  width: 100%;
+}
+.auth__register .auth__register-logo a {
+  width: 133px;
+  height: 86px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .auth__register .auth__register-container {
   width: 400px;
@@ -426,6 +451,10 @@ a {
 .auth__register .auth__register-container form .MuiFormControl-root .MuiFormLabel-root {
   font-family: "Poppins";
 }
+.auth__register .auth__register-container form .MuiFormControl-root label {
+  background-color: #fff;
+  padding-right: 5px;
+}
 .auth__register .auth__register-container form .MuiFormControl-root input {
   width: 100%;
   padding: 16px;
@@ -453,7 +482,6 @@ a {
 }
 .auth__register .auth__register-container form button {
   margin-top: 20px;
-  padding: 16px 8px !important;
   font-size: 18px;
   font-weight: 600;
   width: 100%;
@@ -488,7 +516,6 @@ a {
 .auth__register .auth__register-container > button {
   margin-top: 20px;
   width: 100%;
-  padding: 16px 8px;
   font-size: 18px;
   font-weight: 600;
   border: 1px solid #e6e8e7;
@@ -1335,42 +1362,37 @@ header .header__container .header__controls span:hover {
 }
 
 #login {
+  padding: 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 #login .login__container {
   width: 95%;
-  height: 95vh;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  place-items: center;
+  grid-template-columns: 1fr 1.5fr;
 }
 #login .login__container img {
   width: 100%;
-  height: 95vh;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 24px;
 }
 
 #register {
+  padding: 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 #register .register__container {
   width: 95%;
-  height: 95vh;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  place-items: center;
+  grid-template-columns: 1fr 1.5fr;
 }
 #register .register__container img {
   width: 100%;
-  height: 95vh;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 24px;

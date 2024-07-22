@@ -1,9 +1,19 @@
 .auth__register {
-  padding: 40px 0;
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  gap: 106px;
+  .auth__register-logo {
+    display: flex;
+    width: 100%;
+    a {
+      width: 133px;
+      height: 86px;
+      object-fit: cover;
+    }
+  }
+
   .auth__register-container {
     width: 400px;
     display: flex;
@@ -40,6 +50,10 @@
         .MuiFormLabel-root {
           font-family: $primary-font;
         }
+        label {
+          background-color: $white-color;
+          padding-right: 5px;
+        }
         input {
           width: 100%;
           padding: 16px;
@@ -70,7 +84,6 @@
       }
       button {
         margin-top: 20px;
-        padding: 16px 8px !important;
         font-size: 18px;
         font-weight: 600;
         width: 100%;
@@ -107,7 +120,6 @@
     > button {
       margin-top: 20px;
       width: 100%;
-      padding: 16px 8px;
       font-size: 18px;
       font-weight: 600;
       border: 1px solid $border-color-4;
