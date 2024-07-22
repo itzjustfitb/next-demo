@@ -1,20 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Card({ course, id }) {
-  const { job, companyLogo, company, image } = course;
+function Card({ list, path }) {
+  const { title, company } = list;
 
   return (
     <div className="card">
       <div className="card__top">
         <div className="card__header">
-          <h1>{job}</h1>
+          <h1>{title}</h1>
           <div>
-            <img src={companyLogo} alt={company + "Logo"} />
-            <p>{company}</p>
+            <img
+              src={
+                company.logo === null
+                  ? "https://data-assets.ams3.digitaloceanspaces.com/electriciansearch-co-uk/logos/default-logo.png?rand=415"
+                  : company.logo
+              }
+              alt={"company" + "Logo"}
+            />
+            <p>{company.name}</p>
           </div>
         </div>
-        <Link to={`/courses/${id}`}>
+        <Link to={`${path}/${list.id}`}>
           <span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +42,7 @@ function Card({ course, id }) {
         </Link>
       </div>
       <div className="card__bottom">
-        <img src={image} alt={job} />
+        <img src={"image"} alt={list.title} />
       </div>
     </div>
   );

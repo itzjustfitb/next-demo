@@ -17,6 +17,7 @@
 @import "./sass/components/modal";
 @import "./sass/components/tooltip";
 @import "./sass/components/postCard";
+@import "./sass/components/customizations";
 
 // TODO --------- LAYOUT ---------
 @import "./sass/layout/footer";
@@ -26,10 +27,9 @@
 @import "./sass/pages/home";
 @import "./sass/pages/login";
 @import "./sass/pages/register";
-@import "./sass/pages/courses";
 @import "./sass/pages/requirements";
 @import "./sass/pages/error";
-@import "./sass/pages/jobs";
+@import "./sass/pages/collection";
 @import "./sass/pages/contactUs";
 @import "./sass/pages/application";
 @import "./sass/pages/profile";

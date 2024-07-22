@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 
-function SearchResults({ activeFilter, setActiveFilter }) {
+function SearchResults({ list, activeFilter, setActiveFilter }) {
+  const searchUser = (e) => {
+    const filteredList = list.filter((filteredItem) =>
+      filteredItem.title.toLowerCase().includes(e.target.value.toLowerCase())
+    );
+
+    console.log(filteredList);
+  };
+
   return (
     <div className="search__results">
       <span
@@ -61,12 +69,16 @@ function SearchResults({ activeFilter, setActiveFilter }) {
             />
           </svg>
         </span>
-        <input type="text" placeholder="Search for jobs..." />
+        <input
+          type="text"
+          placeholder="Search for jobs..."
+          onChange={searchUser}
+        />
       </div>
       <div className="search__results-found">
         <p>Search result</p>
         <p>
-          <span>29 </span> Jobs Found
+          <span>{list.length} </span> Jobs Found
         </p>
       </div>
     </div>

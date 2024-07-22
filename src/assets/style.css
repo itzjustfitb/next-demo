@@ -679,9 +679,8 @@ a {
   padding: 32px 0;
   justify-content: start;
   gap: 48px;
-  height: -moz-fit-content;
-  height: fit-content;
   width: 0;
+  height: 0;
   transition: 0.4s;
   box-sizing: border-box;
   overflow: hidden;
@@ -746,6 +745,7 @@ a {
 
 .active-categories {
   width: 30%;
+  height: 100%;
   padding: 32px 49px 32px 32px;
 }
 .active-categories .categories__row {
@@ -980,6 +980,10 @@ a {
   color: #8290fa;
   font-size: 14px;
   font-weight: 600;
+}
+
+.error-message {
+  text-align: center;
 }
 
 footer {
@@ -1372,43 +1376,6 @@ header .header__container .header__controls span:hover {
   border-radius: 24px;
 }
 
-#courses {
-  padding: 40px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#courses .courses__container {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
-}
-#courses .courses__container .courses__bottom {
-  display: flex;
-}
-#courses .courses__container .courses__bottom .courses__cards {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 72px;
-  align-items: end;
-}
-#courses .courses__container .courses__bottom .courses__cards .courses__cards-container {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
-}
-#courses .courses__container .courses__bottom .courses__cards > button {
-  border: 1px solid #6875d1;
-  color: #6875d1;
-  background-color: transparent;
-}
-#courses .courses__container .active-container {
-  gap: 24px;
-}
-
 #requirements {
   padding: 40px 0;
   display: flex;
@@ -1430,14 +1397,12 @@ header .header__container .header__controls span:hover {
   font-size: 36px;
   font-style: normal;
   font-weight: 500;
-  line-height: normal;
 }
 #requirements .requirements__container .requirements__top p {
   color: #5f5f5f;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
-  line-height: normal;
 }
 #requirements .requirements__container .requirements__bottom {
   display: grid;
@@ -1706,40 +1671,44 @@ header .header__container .header__controls span:hover {
      object-fit: cover;
 }
 
-#jobs {
+#collection {
   padding: 40px 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#jobs .jobs__container {
+#collection .collection__container {
   width: 80%;
   display: flex;
+  min-height: 350px;
   flex-direction: column;
   gap: 48px;
 }
-#jobs .jobs__container .jobs__bottom {
+#collection .collection__container .collection__bottom {
   display: flex;
 }
-#jobs .jobs__container .jobs__bottom .jobs__cards {
+#collection .collection__container .collection__bottom .collection__cards {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 72px;
   align-items: end;
 }
-#jobs .jobs__container .jobs__bottom .jobs__cards .jobs__cards-container {
+#collection .collection__container .collection__bottom .collection__cards .collection__cards-container {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 24px;
 }
-#jobs .jobs__container .jobs__bottom .jobs__cards > button {
+#collection .collection__container .collection__bottom .collection__cards .collection__cards-container .error {
+  background-color: rebeccapurple;
+}
+#collection .collection__container .collection__bottom .collection__cards > button {
   border: 1px solid #6875d1;
   color: #6875d1;
   background-color: transparent;
 }
-#jobs .jobs__container .active-container {
+#collection .collection__container .active-container {
   gap: 24px;
 }
 

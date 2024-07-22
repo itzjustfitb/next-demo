@@ -1,9 +1,11 @@
 import React from "react";
 import { DefaultBtn } from "../../assets/components.styles";
 import errorImage from "../../assets/images/error-image.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Error() {
+  const navigate = useNavigate();
+
   return (
     <section id="error">
       <div className="error__container">
@@ -17,7 +19,7 @@ function Error() {
             </p>
           </div>
           <div className="error__buttons">
-            <DefaultBtn>
+            <DefaultBtn onClick={() => navigate(-1)}>
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -29,9 +31,9 @@ function Error() {
                   <path
                     d="M15.8327 10.5H4.16602M4.16602 10.5L9.99935 16.3333M4.16602 10.5L9.99935 4.66666"
                     stroke="#5F5F5F"
-                    stroke-width="1.67"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="1.67"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
               </span>
