@@ -1,6 +1,7 @@
 import React from "react";
 import { DefaultBtn } from "../../assets/components.styles";
 import { Link } from "react-router-dom";
+import userIcon from "../../assets/images/icons/user.svg";
 
 function HeaderAuth() {
   return (
@@ -9,7 +10,10 @@ function HeaderAuth() {
         <DefaultBtn>Sign in</DefaultBtn>
       </Link>
       <Link to="/login">
-        <DefaultBtn>Login</DefaultBtn>
+        <DefaultBtn>
+          <img src={userIcon} alt="" />
+          Login
+        </DefaultBtn>
       </Link>
     </div>
   );

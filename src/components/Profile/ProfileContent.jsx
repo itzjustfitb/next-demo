@@ -5,6 +5,7 @@ import CopyToClipboard from "react-copy-to-clipboard";
 import { TextField } from "@mui/material";
 
 function ProfileContent({
+  userData,
   setEditable,
   editable,
   editBackground,
@@ -71,7 +72,7 @@ function ProfileContent({
         <div className="profile__left">
           <div className="profile__info">
             <div className="profile__explanation">
-              <h1>Ilaha Maharramova</h1>
+              <h1>{userData.name}</h1>
               <p>UX/UI Designer</p>
             </div>
             <p className="profile__connection">100+ network</p>

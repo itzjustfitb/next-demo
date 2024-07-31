@@ -1,11 +1,50 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DefaultBtn, DefaultInput } from "../../../assets/components.styles";
 import { TextField } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import siteLogo from "../../../assets/images/site-logo-auth.png";
+import axios from "axios";
 
 function LoginForm() {
+  const navigate = useNavigate();
   const [hidePass, setHidePass] = useState(false);
+  const [signedUser, setSignedUser] = useState({
+    email: "",
+    password: "",
+  });
+  const urlKeys = window.location.search;
+  const urlParams = new URLSearchParams(urlKeys);
+  const decodedToken = urlParams.get("token");
+  const encodedToken = encodeURIComponent(decodedToken);
+  const [params, setParams] = useState({
+    emailParams: urlParams.get("email"),
+    tokenParams: encodedToken,
+  });
+  const mailConfirmUrl = `https://aliyevelton-001-site1.ltempurl.com/api/Auth/ConfirmEmail?email=${params.emailParams}&token=${params.tokenParams}`;
+  const mailLoginUrl =
+    "https://aliyevelton-001-site1.ltempurl.com/api/Auth/Login";
+  useEffect(() => {
+    if (params.emailParams !== null && params.tokenParams !== null) {
+      axios
+        .post(mailConfirmUrl)
+        .then((res) => console.log(res.data))
+        .catch((err) => console.log(err.message));
+    }
+  }, [params]);
+
+  const formLogin = (e) => {
+    e.preventDefault();
+    axios
+      .post(mailLoginUrl, signedUser, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => {
+        localStorage.setItem("token", res.data.token);
+        navigate("/");
+      });
+  };
 
   return (
     <div className="auth__login">
@@ -19,13 +58,25 @@ function LoginForm() {
           <h1>Log in</h1>
           <p>Please login to continue to your account.</p>
         </div>
-        <form>
-          <TextField label="Email" variant="outlined" type="email" />
+        <form onSubmit={formLogin}>
+          <TextField
+            value={signedUser.email}
+            onChange={(e) =>
+              setSignedUser({ ...signedUser, email: e.target.value })
+            }
+            label="Email"
+            variant="outlined"
+            type="email"
+          />
           <div className="auth__login-password">
             <TextField
               label="Password"
               variant="outlined"
               type={hidePass ? "text" : "password"}
+              value={signedUser.password}
+              onChange={(e) =>
+                setSignedUser({ ...signedUser, password: e.target.value })
+              }
             />
             <span
               className="password-show"

@@ -8,7 +8,7 @@ import { courses, posts } from "../../constants";
 import ProfileContent from "./ProfileContent";
 import PostCard from "../Card/PostCard";
 
-function Profile() {
+function Profile({ userData }) {
   const [copiedText, setCopiedText] = useState({
     value: "www.linkedin.com/in/ilaha-maharramova-61a782298",
     copied: false,
@@ -35,6 +35,7 @@ function Profile() {
   const handleChangeProfilePicture = (e) => {
     const file = e.target.files[0];
     setEditProfilePicture(URL.createObjectURL(file));
+    console.log(editBackground);
   };
 
   const handleTooltipClick = () => {
@@ -52,6 +53,7 @@ function Profile() {
     <section id="profile">
       <div className="profile__container">
         <ProfileContent
+          userData={userData}
           handleChangeBackgroundImage={handleChangeBackgroundImage}
           editBackground={editBackground}
           editProfilePicture={editProfilePicture}
@@ -72,9 +74,9 @@ function Profile() {
             <Link>See all</Link>
           </div>
           <div className="page__section-bottom">
-            {courses.map((course, index) =>
+            {/* {courses.map((course, index) =>
               index < 3 ? <Card key={index} course={course} /> : ""
-            )}
+            )} */}
           </div>
         </PageSection>
         <PageSection className="page__section">
@@ -83,9 +85,9 @@ function Profile() {
             <Link>See all</Link>
           </div>
           <div className="page__section-bottom">
-            {posts.map((post, index) =>
+            {/* {posts.map((post, index) =>
               index < 3 ? <PostCard key={index} post={post} /> : ""
-            )}
+            )} */}
           </div>
         </PageSection>
       </div>

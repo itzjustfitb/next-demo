@@ -20,12 +20,32 @@ import axios from "axios";
 
 function App() {
   const location = useLocation();
+  const [userData, setUserData] = useState({});
+  const [authActive, setAuthActive] = useState(false);
   const [activateLayout, setActivateLayout] = useState(true);
   const [activeFilter, setActiveFilter] = useState(false);
   const [activeModal, setActiveModal] = useState("");
   const [collection, setCollection] = useState([]);
   const [error, setError] = useState(false);
-  const navigate = useNavigate();
+  const token = localStorage.getItem("token");
+  const currentUserUrl =
+    "https://aliyevelton-001-site1.ltempurl.com/api/User/current";
+
+  useEffect(() => {
+    if (token) {
+      axios
+        .get(currentUserUrl, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((res) => {
+          setUserData(res.data);
+          setAuthActive(true);
+          console.log(res.data);
+        });
+    }
+  }, [token]);
 
   let url = "";
   useEffect(() => {
@@ -61,7 +81,16 @@ function App() {
 
   return (
     <>
-      {activateLayout ? <Header location={location} /> : ""}
+      {activateLayout ? (
+        <Header
+          authActive={authActive}
+          setAuthActive={setAuthActive}
+          location={location}
+          userData={userData}
+        />
+      ) : (
+        ""
+      )}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
@@ -111,7 +140,7 @@ function App() {
           element={<Application setActiveModal={setActiveModal} />}
         />
         <Route path="/contact-us" element={<ContactUs />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile" element={<Profile userData={userData} />} />
         <Route path="/profile/share-post" element={<SharePost />} />
         <Route path="*" element={<Error />} />
       </Routes>

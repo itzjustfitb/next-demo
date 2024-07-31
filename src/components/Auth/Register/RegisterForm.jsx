@@ -1,10 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DefaultBtn, DefaultInput } from "../../../assets/components.styles";
 import { TextField } from "@mui/material";
 import siteLogo from "../../../assets/images/site-logo-auth.png";
 import { Link } from "react-router-dom";
+import axios from "axios";
 function RegisterForm() {
   const [hidePass, setHidePass] = useState(false);
+  const [registeredUser, setRegisteredUser] = useState({
+    name: "",
+    surname: "",
+    email: "",
+    password: "",
+  });
+  const url = "https://aliyevelton-001-site1.ltempurl.com/api/User/Register";
+
+  const formSubmit = (e) => {
+    e.preventDefault();
+    axios.post(url, registeredUser).then((res) => console.log(res));
+    setRegisteredUser({
+      ...registeredUser,
+      name: "",
+      surname: "",
+      email: "",
+      password: "",
+    });
+  };
 
   return (
     <div className="auth__register">
@@ -18,12 +38,43 @@ function RegisterForm() {
           <h1>Sign up</h1>
           <p>Sign up to enjoy the feature of Revolutie</p>
         </div>
-        <form>
-          <TextField label="Your Name" variant="outlined" type="text" />
-          <TextField label="" variant="outlined" type="date" />
-          <TextField label="Email" variant="outlined" type="email" />
+        <form onSubmit={formSubmit}>
+          <TextField
+            value={registeredUser.name}
+            label="Your Name"
+            variant="outlined"
+            type="text"
+            onChange={(e) =>
+              setRegisteredUser({ ...registeredUser, name: e.target.value })
+            }
+          />
+          <TextField
+            value={registeredUser.surname}
+            label="Your Surname"
+            variant="outlined"
+            type="text"
+            onChange={(e) =>
+              setRegisteredUser({ ...registeredUser, surname: e.target.value })
+            }
+          />
+          <TextField
+            value={registeredUser.email}
+            label="Email"
+            variant="outlined"
+            type="email"
+            onChange={(e) =>
+              setRegisteredUser({ ...registeredUser, email: e.target.value })
+            }
+          />
           <div className="auth__register-password">
             <TextField
+              value={registeredUser.password}
+              onChange={(e) =>
+                setRegisteredUser({
+                  ...registeredUser,
+                  password: e.target.value,
+                })
+              }
               label="Password"
               variant="outlined"
               type={hidePass ? "text" : "password"}
