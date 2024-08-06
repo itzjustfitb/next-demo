@@ -64,6 +64,11 @@
           }
         }
       }
+      .register-input {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
       .auth__register-password {
         position: relative;
         width: 100%;

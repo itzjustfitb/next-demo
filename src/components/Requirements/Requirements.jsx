@@ -25,12 +25,8 @@ function Requirements({ collection, setCollection }) {
       value: "Full - time",
     },
     {
-      label: "Skill",
-      value: "Middle",
-    },
-    {
-      label: "Number of Applicants",
-      value: [20, 50],
+      label: "Experience",
+      value: "1 year",
     },
     {
       label: "Deadline",
@@ -215,9 +211,7 @@ function Requirements({ collection, setCollection }) {
                 <div key={index} className="requirements__content-detail">
                   <h1>{detail.label}</h1>
                   {detail.label === "Salary" ? (
-                    <p>
-                      $ {detail.value} / <span>hour</span>
-                    </p>
+                    <p>$ {detail.value}</p>
                   ) : detail.label === "Number of Applicants" ? (
                     <p>
                       {detail.value[0]} / <span>{detail.value[1]}</span>

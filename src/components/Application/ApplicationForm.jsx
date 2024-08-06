@@ -6,9 +6,7 @@ function ApplicationForm({ setActiveStep, setActiveForm }) {
   const [inputs, setInputs] = useState({
     fullName: "",
     email: "",
-    salaryExp: "",
-    currency: "",
-    date: "",
+    letter: "",
     file: "",
   });
   const [isDisabled, setIsDisabled] = useState(true);
@@ -41,29 +39,12 @@ function ApplicationForm({ setActiveStep, setActiveForm }) {
           onChange={(e) => setInputs({ ...inputs, email: e.target.value })}
         />
         <TextField
+          id="outlined-multiline-flexible"
+          label="Cover Letter"
           className="application__form-input"
-          label="Salary expectation"
-          variant="outlined"
-          type="number"
-          value={inputs.salaryExp}
-          onChange={(e) => setInputs({ ...inputs, salaryExp: e.target.value })}
-        />
-        <TextField
-          className="application__form-input"
-          label="Currency"
-          variant="outlined"
-          type="number"
-          value={inputs.currency}
-          onChange={(e) => setInputs({ ...inputs, currency: e.target.value })}
-        />
-        <TextField
-          className="application__form-input"
-          label="Start date"
-          variant="outlined"
-          type="number"
-          value={inputs.date}
-          onChange={(e) => setInputs({ ...inputs, date: e.target.value })}
-          InputLabelProps={{ shrink: true }}
+          multiline
+          minRows={4}
+          maxRows={4}
         />
       </div>
       <div className="application__upload">
