@@ -1,23 +1,43 @@
-import {
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  TextField,
-} from "@mui/material";
+import { TextField } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { DefaultBtn } from "../../assets/components.styles";
+import axios from "axios";
+import VacancyForm from "../Forms/VacancyForm";
+import { Space, Select } from "antd";
 
 function SharePost() {
-  const [announcement, setAnnouncement] = useState({
-    type: "",
-    title: "",
-    details: "",
-  });
+  const [announcement, setAnnouncement] = useState("");
+  const [categories, setCategories] = useState([]);
+  const [companies, setCompanies] = useState([]);
+  const [errors, setErrors] = useState({});
+  const [checkInputs, setCheckInputs] = useState(false);
 
+  const categoryUrl =
+    "https://aliyevelton-001-site1.ltempurl.com/api/Categories";
+  const companyUrl = "https://aliyevelton-001-site1.ltempurl.com/api/Companies";
+  const jobsUrl = "https://aliyevelton-001-site1.ltempurl.com/api/Jobs";
+  useEffect(() => {
+    axios.get(categoryUrl).then((res) => setCategories(res.data));
+    axios.get(companyUrl).then((res) => setCompanies(res.data));
+  }, []);
+
+  const [option, setOption] = useState(null);
+  const [vacancy, setVacancy] = useState({
+    title: "",
+    position: "",
+    description: "",
+    location: "",
+    jobType: "",
+    exactSalary: 0,
+    minSalary: 0,
+    maxSalary: 0,
+    salaryType: 0,
+    categoryId: 0,
+    companyId: 0,
+  });
   const handleChange = (event) => {
-    setAnnouncement({ ...announcement, type: event.target.value });
+    setAnnouncement(event);
   };
 
   const [isDisabled, setIsDisabled] = useState(true);
@@ -29,6 +49,49 @@ function SharePost() {
   useEffect(() => {
     setIsDisabled(!checkForm(announcement));
   }, [announcement]);
+
+  useEffect(() => {
+    if (checkInputs) {
+      checkValidation();
+    }
+  }, [vacancy]);
+  const checkValidation = () => {
+    const validationErrors = {};
+    if (!vacancy.title.trim()) validationErrors.title = "Title is required!";
+    if (!vacancy.position.trim())
+      validationErrors.position = "Position is required!";
+    if (!vacancy.location.trim())
+      validationErrors.location = "Location is required!";
+    if (!vacancy.jobType > 0)
+      validationErrors.jobType = "Job type is required!";
+    if (!vacancy.categoryId > 0)
+      validationErrors.categoryId = "Category is required!";
+    if (!vacancy.companyId > 0)
+      validationErrors.companyId = "Company is required!";
+    if (!vacancy.description.trim())
+      validationErrors.description = "Description is required!";
+    if (vacancy.salaryType === 0)
+      validationErrors.salaryType = "Salary type is required!";
+    else if (vacancy.salaryType === 1) {
+      if (!vacancy.exactSalary > 0) {
+        validationErrors.exactSalary = "Salary is required!";
+      }
+    } else if (vacancy.salaryType === 2) {
+      if (!vacancy.minSalary > 0)
+        validationErrors.minSalary = "Minimum salary is required!";
+      if (!vacancy.maxSalary > 0)
+        validationErrors.maxSalary = "Maximum salary is required!";
+    }
+    setErrors(validationErrors);
+  };
+  const postVacancy = () => {
+    checkValidation();
+    setCheckInputs(true);
+    // axios
+    //   .post(jobsUrl, vacancy)
+    //   .then((res) => console.log(res.data))
+    //   .catch((err) => console.log(err));
+  };
 
   return (
     <section id="share-post">
@@ -61,70 +124,33 @@ function SharePost() {
         </div>
         <div className="share-post__bottom">
           <form>
-            <FormControl>
+            <Space wrap>
               <Select
-                value={announcement.type}
+                defaultValue={"Select post type"}
                 onChange={handleChange}
-                displayEmpty
-                inputProps={{ "aria-label": "Without label" }}
-              >
-                <MenuItem value="">
-                  <em>Select your post type</em>
-                </MenuItem>
-                <MenuItem value={1}>Option 1</MenuItem>
-                <MenuItem value={2}>Option 2</MenuItem>
-                <MenuItem value={3}>Option 3</MenuItem>
-              </Select>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  d="M6 9L12 15L18 9"
-                  stroke="black"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </FormControl>
-            <TextField
-              id="outlined-basic"
-              label="Title of your post"
-              variant="outlined"
-              value={announcement.title}
-              onChange={(e) =>
-                setAnnouncement({ ...announcement, title: e.target.value })
-              }
-            />
-          </form>
-
-          <div className="share-post__textarea">
-            <div className="share-post__textarea-header">
-              <h1>Give us some details</h1>
-              <p>
-                Upload more information to make it clear for everyone. Make sure
-                your file is proper.
-              </p>
-            </div>
-            <div className="share-post__textarea-letter">
-              <TextField
-                id="outlined-multiline-flexible"
-                label="More detail about your post"
-                multiline
-                maxRows={4}
-                value={announcement.details}
-                onChange={(e) =>
-                  setAnnouncement({ ...announcement, details: e.target.value })
-                }
+                options={[
+                  { value: "Course", label: "Course" },
+                  { value: "Vacancy", label: "Vacancy" },
+                ]}
               />
-              <p>0/500</p>
-            </div>
-          </div>
-          <DefaultBtn disabled={isDisabled}>Post</DefaultBtn>
+            </Space>
+
+            {announcement === "Vacancy" ? (
+              <VacancyForm
+                categories={categories}
+                companies={companies}
+                vacancy={vacancy}
+                setVacancy={setVacancy}
+                errors={errors}
+                setErrors={setErrors}
+              />
+            ) : (
+              ""
+            )}
+          </form>
+          <DefaultBtn onClick={postVacancy} disabled={isDisabled}>
+            Post
+          </DefaultBtn>
         </div>
       </div>
     </section>

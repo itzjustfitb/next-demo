@@ -1,0 +1,34 @@
+.vacancy-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  .vacancy-form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .vacancy-form__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
+  .vacancy-form__message {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    .vacancy-form__salary {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      .vacancy-form__range {
+        display: flex;
+        gap: 20px;
+      }
+    }
+  }
+}

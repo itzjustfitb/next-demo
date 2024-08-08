@@ -29,7 +29,7 @@ function RegisterForm() {
       validationErrors.username = "Username is required!";
     if (!registeredUser.surname.trim())
       validationErrors.surname = "Surname is required!";
-    if (!registeredUser.email.trim)
+    if (!registeredUser.email.trim())
       validationErrors.email = "Email is required!";
     else if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(registeredUser.email))
       validationErrors.email = "Email is not valid!";

@@ -15,6 +15,76 @@
   }
   p {
     text-align: start;
+    font-size: 0.7rem;
     line-height: 1.2rem;
   }
+}
+
+// .MuiFormControl-root {
+//   position: relative;
+//   label,
+//   div {
+//     font-family: $primary-font !important;
+//   }
+//   .MuiInputBase-root {
+//     .MuiSelect-select {
+//       padding-left: 52px;
+//     }
+//     svg {
+//       display: none;
+//     }
+//   }
+//   > svg {
+//     z-index: -1;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     left: 16px;
+//     position: absolute;
+//   }
+// }
+
+.ant-space {
+  .ant-space-item {
+    width: 100% !important;
+
+    .ant-select {
+      width: 100% !important;
+      font-family: $primary-font !important;
+    }
+  }
+  textarea {
+    background-color: rebeccapurple;
+  }
+}
+
+.ant-select {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+  align-items: center !important;
+  position: relative;
+  height: 48px;
+
+  .ant-select-arrow {
+    left: 16px;
+    width: fit-content;
+    color: transparent;
+    &::after {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 24px;
+      background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj4KICA8cGF0aCBkPSJNNiA5TDEyIDE1TDE4IDkiIHN0cm9rZT0iYmxhY2siIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=")
+        no-repeat center center;
+      background-size: contain;
+      position: absolute;
+    }
+  }
+}
+.ant-select-selection-item {
+  margin-left: 40px !important;
+}
+
+.ant-input {
+  height: 48px;
+  font-family: $primary-font !important;
 }

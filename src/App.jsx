@@ -16,7 +16,9 @@ import Collection from "./components/Collection/Collection";
 import Modal from "./components/Modal/Modal";
 import Profile from "./components/Profile/Profile";
 import SharePost from "./components/SharePost/SharePost";
+import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const location = useLocation();
@@ -91,6 +93,19 @@ function App() {
       ) : (
         ""
       )}
+
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
